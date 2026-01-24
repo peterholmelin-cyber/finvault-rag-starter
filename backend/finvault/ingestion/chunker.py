@@ -54,32 +54,24 @@ class Chunker:
 
     def _chunk(self, text: str) -> list[Chunk]:
         """Split markdown into semantic chunks respecting headers and tables."""
-        # TODO: Normalize page breaks in the input text.
         # TODO: Use the header splitter to segment text by markdown headers.
         # TODO: For each section, decide whether to keep it whole or split further based on token count.
         # TODO: Preserve tables as single chunks regardless of size.
-        # TODO: Return the merged list of chunks after handling small fragments.
         pass
 
     def _merge_small(self, chunks: list[Chunk]) -> list[Chunk]:
         """Merge consecutive chunks that are below the minimum token threshold."""
         # TODO: Iterate through chunks and combine adjacent small chunks.
-        # TODO: Preserve metadata from the first chunk when merging.
-        # TODO: Return the consolidated list of chunks.
         pass
 
     def _enrich(self, full_doc: str, chunks: list[Chunk]) -> list[Chunk]:
         """Enrich each chunk with contextual summary using the LLM."""
         # TODO: For each chunk, invoke the LLM with the context enrichment prompt.
-        # TODO: Clean up excessive whitespace in the chunk content.
-        # TODO: Store the context in metadata and create a combined vector_text field.
-        # TODO: Return the list of enriched chunks.
         pass
 
     def _store(self, chunks: list[Chunk], doc_info: DocumentInfo, markdown: str):
         """Persist document and chunks to the database."""
         # TODO: Insert document record into the 'documents' table and retrieve the generated ID.
-        # TODO: Generate embeddings for all chunks using the embedding model.
         # TODO: Batch insert all chunk records with their embeddings into the 'chunks' table.
         pass
 

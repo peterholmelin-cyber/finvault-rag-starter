@@ -53,7 +53,5 @@ class DocumentConverter:
     def convert(self, pdf_path: str) -> str:
         """Convert PDF to markdown with table extraction and image descriptions."""
         # TODO: Use the Docling converter to process the PDF file.
-        # TODO: Export the result to markdown format with appropriate placeholders.
         # TODO: Transform annotation markers into semantic image description tags.
-        # TODO: Return the processed markdown string.
         pass

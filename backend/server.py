@@ -91,13 +91,9 @@ tasks: dict[str, IngestTask] = {}
 async def lifespan(app: FastAPI):
     """Initialize application dependencies on startup."""
     global context, rag_workflow
-    # TODO: Validate that required environment variables are set.
     # TODO: Initialize the chat model with appropriate provider-specific parameters.
     # TODO: Initialize the embedding model and Supabase client.
-    # TODO: Construct the ContextSchema with LLM, retriever (with HyDE), and reranker.
     # TODO: Build the RAG workflow.
-    # TODO: Yield control to the application.
-    # TODO: Clean up resources on shutdown.
     yield
 
 
@@ -132,12 +128,8 @@ class ChatRequest(BaseModel):
 
 def run_ingestion(task_id: str, pdf_path: str, doc_info: DocumentInfo):
     """Background task for document ingestion."""
-    # TODO: Update task status to PROCESSING.
     # TODO: Convert the PDF to markdown using DocumentConverter.
     # TODO: Run the chunking pipeline with context enrichment.
-    # TODO: Clean up the temporary file.
-    # TODO: Update task status to COMPLETED with chunk count.
-    # TODO: Handle exceptions by setting FAILED status with error message.
     pass
 
 
@@ -151,12 +143,8 @@ async def ingest_document(
     fiscal_quarter: int | None = Form(None),
 ):
     """Ingest a PDF document (background processing). Poll /ingest/{task_id}/status for progress."""
-    # TODO: Validate that the service is initialized and file is a PDF.
-    # TODO: Construct DocumentInfo and validate business rules.
-    # TODO: Save the uploaded file to a temporary location.
     # TODO: Create and register an IngestTask.
     # TODO: Schedule the background ingestion task.
-    # TODO: Return the task ID and status for polling.
     pass
 
 
@@ -178,11 +166,8 @@ async def list_ingest_tasks(limit: int = 20):
 @app.post("/chat")
 async def chat(request: ChatRequest):
     """Query the RAG system with streaming SSE response."""
-    # TODO: Validate service initialization and query content.
-    # TODO: Construct QueryFilters from the request parameters.
     # TODO: Create an async generator that streams workflow events.
     # TODO: Transform TokenEvent, SourceEvent, and DoneEvent into SSE format.
-    # TODO: Return a StreamingResponse with appropriate headers.
     pass
 
 

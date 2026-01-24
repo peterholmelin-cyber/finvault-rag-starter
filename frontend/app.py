@@ -27,9 +27,7 @@ def escape_markdown(text: str) -> str:
 
 def check_api_health() -> bool:
     """Check if the backend API is healthy and initialized."""
-    # TODO: Make a GET request to the /health endpoint.
     # TODO: Return True only if the response indicates initialization is complete.
-    # TODO: Handle connection errors gracefully.
     pass
 
 
@@ -38,26 +36,19 @@ def upload_document(
 ) -> dict:
     """Upload a document for ingestion."""
     # TODO: Construct the multipart form data with file and metadata.
-    # TODO: POST to the /ingest endpoint.
-    # TODO: Return the JSON response.
     pass
 
 
 def get_task_status(task_id: str) -> dict:
     """Get the status of an ingestion task."""
     # TODO: GET the task status from /ingest/{task_id}/status.
-    # TODO: Return the JSON response.
     pass
 
 
 def stream_chat(query: str, thread_id: str | None, filters: dict):
     """Stream chat responses from the API using SSE."""
     # TODO: Construct the request payload with query, thread_id, and filters.
-    # TODO: Open a streaming POST connection to /chat.
     # TODO: Parse SSE events (event type and data lines).
-    # TODO: For token events, accumulate text and yield incremental updates.
-    # TODO: For source events, parse JSON and collect sources.
-    # TODO: For done events, yield final result with all sources.
     pass
 
 
@@ -216,9 +207,6 @@ if prompt := st.chat_input(
         final_content = ""
 
         # TODO: Implement the streaming chat interaction.
-        # TODO: Call stream_chat and iterate over the yielded events.
         # TODO: Update the placeholder with incremental token content.
         # TODO: Display sources in an expander when streaming completes.
-        # TODO: Append the assistant message to session state.
-        # TODO: Handle errors gracefully with st.error.
         pass

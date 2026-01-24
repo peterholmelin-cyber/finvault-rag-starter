@@ -29,9 +29,6 @@ class HybridRetriever:
         report_type: ReportType | None = None,
     ) -> list[dict]:
         """Execute hybrid search with optional metadata filters."""
-        # TODO: Apply HyDE expansion to the query if an expander is configured.
         # TODO: Call the Supabase RPC function 'hybrid_search' with query text and embedding.
         # TODO: Pass all filter parameters (ticker, fiscal_year, fiscal_quarter, report_type).
-        # TODO: Configure the RRF fusion weights for combining full-text and semantic scores.
-        # TODO: Transform the response data into a standardized chunk dictionary format.
         pass

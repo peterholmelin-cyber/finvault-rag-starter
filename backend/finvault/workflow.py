@@ -55,8 +55,6 @@ def retrieve_node(
     state: WorkflowState, runtime: Runtime[ContextSchema], config: RunnableConfig
 ) -> dict:
     """Retrieve relevant chunks from the vector store."""
-    # TODO: Extract the retriever from the runtime context.
-    # TODO: Extract filter parameters from the config's configurable section.
     # TODO: Call the retriever with the query and all applicable filters.
     # TODO: Return the raw chunks in the expected state update format.
     pass
@@ -64,7 +62,6 @@ def retrieve_node(
 
 def rerank_node(state: WorkflowState, runtime: Runtime[ContextSchema]) -> dict:
     """Rerank the retrieved chunks for relevance."""
-    # TODO: Extract the reranker from the runtime context.
     # TODO: Rerank the raw_chunks using the original query.
     # TODO: Return the reranked chunks in the expected state update format.
     pass
@@ -74,23 +71,16 @@ def generate_answer_node(
     state: WorkflowState, runtime: Runtime[ContextSchema], writer: StreamWriter
 ) -> dict:
     """Generate streaming answer using the top reranked chunks as context."""
-    # TODO: Convert the top N reranked chunk dictionaries to Chunk objects.
     # TODO: Format the chunks into a context string using the CHUNK_TEMPLATE.
-    # TODO: Build the message list with system prompt, conversation history, and current query.
     # TODO: Stream LLM tokens and emit TokenEvent for each chunk via the writer.
     # TODO: After completion, emit SourceEvent for each used chunk.
-    # TODO: Emit a DoneEvent to signal completion.
-    # TODO: Return state update with answer_text and new messages.
     pass
 
 
 def build_workflow() -> CompiledStateGraph[WorkflowState, ContextSchema]:
     """Construct and compile the RAG workflow graph."""
-    # TODO: Create a StateGraph with WorkflowState and ContextSchema.
     # TODO: Add nodes for retrieve, rerank, and generate_answer.
-    # TODO: Set the entry point and define edges between nodes.
     # TODO: Compile the graph with a MemorySaver checkpointer.
-    # TODO: Return the compiled workflow.
     pass
 
 
@@ -103,6 +93,5 @@ async def stream_response(
 ) -> AsyncGenerator[StreamEvent, None]:
     """Stream workflow events as an async generator."""
     # TODO: Configure the workflow run with filters and thread_id.
-    # TODO: Use astream with stream_mode="custom" to receive StreamWriter events.
     # TODO: Yield each event from the workflow execution.
     pass

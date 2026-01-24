@@ -20,6 +20,4 @@ class MultiQueryExpander:
     def expand(self, query: str) -> list[str]:
         """Return the original query plus up to 3 reformulated variants."""
         # TODO: Invoke the LLM with the multi-query expansion prompt.
-        # TODO: Combine the original query with the generated variants.
-        # TODO: Return the list ensuring no more than 4 total queries.
         pass
