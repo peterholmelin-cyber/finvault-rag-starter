@@ -23,14 +23,25 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mlflow>=3.0.0",
+    "pytest>=8.0.0",
     "python-dotenv>=1.2.1",
     "ruff>=0.14.14",
 ]
 
 [tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s %(levelname)s %(name)s: %(message)s"
+
 pythonpath = [
   "."
 ]
 
-[tool.setuptools]
-packages = ["backend"]
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["finvault*"]
+
