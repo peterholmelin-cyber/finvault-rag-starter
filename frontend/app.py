@@ -201,16 +201,18 @@ def display_message_count():
 
 # Check API health
 api_healthy = check_api_health()
+@st.fragment(run_every=5)
+def display_health(api_healthy):
+    if api_healthy:
+         st.success("✓ API Connected")
+    else:
+        st.error("✗ API Offline - Start with `uvicorn server:app`")
 
 # Sidebar
 with st.sidebar:
     st.header(":material/settings: Settings")
 
-    if api_healthy:
-        st.success("✓ API Connected")
-    else:
-        st.error("✗ API Offline - Start with `uvicorn server:app`")
-
+    display_health(api_healthy)
     # Document upload
     st.divider()
     st.subheader(":material/upload_file: Upload Document")
